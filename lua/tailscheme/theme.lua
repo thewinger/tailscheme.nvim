@@ -158,7 +158,7 @@ theme.set_highlights = function()
   hl(0, "TSStructure", { fg = c.blue, bg = 'NONE' })
   hl(0, "TSStrong", { fg = c.blue, bg = 'NONE', bold=true, })
   hl(0, "TSQueryLinterError", { fg = c.warning_orange, bg = 'NONE' })
-  hl(0, "TreesitterContext", { fg = 'NONE', bg = c.gray_light })
+  hl(0, "TreesitterContext", { fg = 'NONE', bg = c.dark })
 
   -- Git
   hl(0, "SignAdd", { fg = c.sign_add, bg = 'NONE' })
