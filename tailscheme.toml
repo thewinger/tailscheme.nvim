@@ -35,7 +35,7 @@
   hint_blue = '#0EA5E9'
   success_green = '#22C55e'
 
-[highlights]
+[s]
  Normal = 'fg bg'
  SignColumn = '- bg'
  MsgArea = 'fg dark'
@@ -261,3 +261,25 @@
 [Illuminate]
  illuminateCurWord = 'link:IncSearch'
  illuminateWord = 'link:IncSearch'
+
+[Notify]
+ NotifyERRORBorder = 'error_red'
+ NotifyERRORIcon = 'error_red'
+ NotifyERRORTitle  = 'error_red'
+ NotifyWARNBorder = 'warning_orange'
+ NotifyWARNIcon = 'warning_orange'
+ NotifyWARNTitle = 'warning_orange'
+ NotifyDEBUGBorder = 'gray'
+ NotifyDEBUGIcon = 'gray'
+ NotifyDEBUGTitle  = 'gray'
+ NotifyTRACEBorder = 'purple'
+ NotifyTRACEIcon = 'purple'
+ NotifyTRACETitle  = 'purple'
+ NotifyINFOBorder = 'hint_blue'
+ NotifyINFOIcon = 'hint_blue'
+ NotifyINFOTitle = 'hint_blue'
+ NotifyERRORBody = 'link:Normal'
+ NotifyWARNBody = 'link:Normal'
+ NotifyINFOBody = 'link:Normal'
+ NotifyDEBUGBody = 'link:Normal'
+ NotifyTRACEBody = 'link:Normal'

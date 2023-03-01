@@ -6,7 +6,7 @@ local theme = {}
 
 theme.set_highlights = function()
 
-  -- highlights
+  -- s
   hl(0, "Normal", { fg = c.fg, bg = c.bg })
   hl(0, "SignColumn", { fg = 'NONE', bg = c.bg })
   hl(0, "MsgArea", { fg = c.fg, bg = c.dark })
@@ -232,6 +232,28 @@ theme.set_highlights = function()
   -- Illuminate
   hl(0, "illuminateCurWord", { link = 'IncSearch' })
   hl(0, "illuminateWord", { link = 'IncSearch' })
+
+  -- Notify
+  hl(0, "NotifyERRORBorder", { fg = c.error_red, bg = 'NONE' })
+  hl(0, "NotifyERRORIcon", { fg = c.error_red, bg = 'NONE' })
+  hl(0, "NotifyERRORTitle", { fg = c.error_red, bg = 'NONE' })
+  hl(0, "NotifyWARNBorder", { fg = c.warning_orange, bg = 'NONE' })
+  hl(0, "NotifyWARNIcon", { fg = c.warning_orange, bg = 'NONE' })
+  hl(0, "NotifyWARNTitle", { fg = c.warning_orange, bg = 'NONE' })
+  hl(0, "NotifyDEBUGBorder", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NotifyDEBUGIcon", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NotifyDEBUGTitle", { fg = c.gray, bg = 'NONE' })
+  hl(0, "NotifyTRACEBorder", { fg = c.purple, bg = 'NONE' })
+  hl(0, "NotifyTRACEIcon", { fg = c.purple, bg = 'NONE' })
+  hl(0, "NotifyTRACETitle", { fg = c.purple, bg = 'NONE' })
+  hl(0, "NotifyINFOBorder", { fg = c.hint_blue, bg = 'NONE' })
+  hl(0, "NotifyINFOIcon", { fg = c.hint_blue, bg = 'NONE' })
+  hl(0, "NotifyINFOTitle", { fg = c.hint_blue, bg = 'NONE' })
+  hl(0, "NotifyERRORBody", { link = 'Normal' })
+  hl(0, "NotifyWARNBody", { link = 'Normal' })
+  hl(0, "NotifyINFOBody", { link = 'Normal' })
+  hl(0, "NotifyDEBUGBody", { link = 'Normal' })
+  hl(0, "NotifyTRACEBody", { link = 'Normal' })
 end
 
 return theme
