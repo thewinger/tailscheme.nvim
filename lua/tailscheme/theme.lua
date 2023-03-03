@@ -254,6 +254,7 @@ theme.set_highlights = function()
   hl(0, "NotifyINFOBody", { link = 'Normal' })
   hl(0, "NotifyDEBUGBody", { link = 'Normal' })
   hl(0, "NotifyTRACEBody", { link = 'Normal' })
+  hl(0, "NotifyBackground", { fg = 'NONE', bg = c.dark })
 end
 
 return theme
