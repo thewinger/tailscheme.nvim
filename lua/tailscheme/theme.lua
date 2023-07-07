@@ -255,6 +255,11 @@ theme.set_highlights = function()
   hl(0, "NotifyDEBUGBody", { link = 'Normal' })
   hl(0, "NotifyTRACEBody", { link = 'Normal' })
   hl(0, "NotifyBackground", { fg = 'NONE', bg = c.dark })
+
+  -- Syntax
+  hl(0, "tsxIntrinsicTagName", { fg = c.magenta, bg = 'NONE' })
+  hl(0, "tsxAttrib", { fg = c.white, bg = 'NONE' })
+  hl(0, "tsxString", { fg = c.blue, bg = 'NONE' })
 end
 
 return theme

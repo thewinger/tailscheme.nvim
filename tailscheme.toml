@@ -118,7 +118,7 @@
  PreCondit = 'magenta'
  Special = 'blue'
  SpecialChar = 'white'
- Tag = 'blue'
+ Tag = 'magenta'
  Debug = 'red'
  Delimiter = 'gray -'
  SpecialComment = 'comment'
@@ -284,3 +284,8 @@
  NotifyDEBUGBody = 'link:Normal'
  NotifyTRACEBody = 'link:Normal'
  NotifyBackground = '- dark'
+
+[Syntax]
+ tsxIntrinsicTagName = 'magenta'
+ tsxAttrib = 'white'
+ tsxString = 'blue'
