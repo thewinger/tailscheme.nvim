@@ -289,3 +289,6 @@
  tsxIntrinsicTagName = 'magenta'
  tsxAttrib = 'white'
  tsxString = 'blue'
+
+[Noice]
+ NoiceCmdlinePopupBorder = 'white'
