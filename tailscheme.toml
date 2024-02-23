@@ -292,3 +292,5 @@
 
 [Noice]
  NoiceCmdlinePopupBorder = 'white'
+ NoiceCmdlineIcon = 'magenta'
+ NoiceCmdlinePopupTitle = 'magenta'

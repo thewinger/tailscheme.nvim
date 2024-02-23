@@ -263,6 +263,8 @@ theme.set_highlights = function()
 
   -- Noice
   hl(0, "NoiceCmdlinePopupBorder", { fg = c.white, bg = 'NONE' })
+  hl(0, "NoiceCmdlineIcon", { fg = c.magenta, bg = 'NONE' })
+  hl(0, "NoiceCmdlinePopupTitle", { fg = c.magenta, bg = 'NONE' })
 end
 
 return theme
