@@ -258,8 +258,8 @@ theme.set_highlights = function()
 
   -- Syntax
   hl(0, "tsxIntrinsicTagName", { fg = c.magenta, bg = 'NONE' })
-  hl(0, "tsxAttrib", { fg = c.white, bg = 'NONE' })
-  hl(0, "tsxString", { fg = c.blue, bg = 'NONE' })
+  hl(0, "tsxAttrib", { fg = c.blue, bg = 'NONE' })
+  hl(0, "tsxString", { fg = c.white, bg = 'NONE' })
 
   -- Noice
   hl(0, "NoiceCmdlinePopupBorder", { fg = c.white, bg = 'NONE' })

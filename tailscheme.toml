@@ -287,8 +287,8 @@
 
 [Syntax]
  tsxIntrinsicTagName = 'magenta'
- tsxAttrib = 'white'
- tsxString = 'blue'
+ tsxAttrib = 'blue'
+ tsxString = 'white'
 
 [Noice]
  NoiceCmdlinePopupBorder = 'white'
