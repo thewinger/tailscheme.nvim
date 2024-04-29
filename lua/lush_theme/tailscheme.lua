@@ -168,7 +168,7 @@ local theme = lush(function(injected_functions)
 		Boolean({ fg = cyan }), --   A boolean constant: TRUE, false
 		Float({ fg = white }), --   A floating point constant: 2.3e10
 
-		Identifier({ fg = white }), -- (* Any variable name
+		Identifier({ fg = blue }), -- (* Any variable name
 		Function({ fg = magenta }), --   Function name (also: methods for classes
 
 		Statement({ fg = magenta }), -- (* Any statement
@@ -190,7 +190,7 @@ local theme = lush(function(injected_functions)
 		-- Structure      { }, --   struct, union, enum, etc.
 		-- Typedef        { }, --   A typedef
 
-		Special({ fg = blue }), -- (* Any special symbol
+		Special({ fg = gray }), -- (* Any special symbol
 		-- SpecialChar    { }, --   Special character in a constant
 		-- Tag            { }, --   You can use CTRL-] on this
 		Delimiter({ fg = gray_light }), --   Character that needs attention
