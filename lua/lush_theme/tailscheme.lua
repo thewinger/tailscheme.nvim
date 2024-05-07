@@ -199,7 +199,7 @@ local theme = lush(function(injected_functions)
 
 		Underlined({ gui = "underline" }), -- Text that stands out, HTML links
 		Ignore({ fg = cyan, bg = bg, gui = "bold" }), -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template
-		Error({ fg = bg, bg = red, gui = "bold" }), -- Any erroneous construct
+		Error({ fg = red, bg = bg, gui = "bold" }), -- Any erroneous construct
 		Todo({ fg = bg, bg = cyan, gui = "bold" }), -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 		-- These groups are for the native LSP client and diagnostic system. Some
