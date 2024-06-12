@@ -356,7 +356,7 @@ local theme = lush(function(injected_functions)
 		-- sym"@include"           { }, -- Include
 		-- sym"@preproc"           { }, -- PreProc
 		-- sym"@debug"             { }, -- Debug
-		-- sym"@tag"               { }, -- Tag
+		sym("@tag.tsx")({ fg = green_light }), -- Tag
 
 		sym("@tag.delimiter.tsx")({ fg = gray }),
 		sym("@tag.builtin.tsx")({ fg = pink }),
