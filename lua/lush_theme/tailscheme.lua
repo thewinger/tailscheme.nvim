@@ -376,6 +376,8 @@ local theme = lush(function(injected_functions)
 		sym("@text.html.entity.name.function")({ fg = green_light }),
 
 		-- [CSS]
+		sym("@keyword.directive.css")({ fg = purple }),
+		sym("@keyword.directive.scss")({ fg = purple }),
 		sym("@property.css")({ fg = pink }),
 		sym("@source.css.entity")({ fg = pink }),
 		sym("@source.css.entity.other.attribute-name.class")({ fg = pink }),
