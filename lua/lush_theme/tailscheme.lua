@@ -333,7 +333,7 @@ local theme = lush(function(injected_functions)
 		-- sym"@number"            { }, -- Number
 		-- sym"@boolean"           { }, -- Boolean
 		-- sym"@float"             { }, -- Float
-		-- sym"@function"          { }, -- Function
+		sym("@function.tsx")({ fg = green_light }), -- Function
 		-- sym"@function.builtin"  { }, -- Special
 		-- sym"@function.macro"    { }, -- Macro
 		-- sym"@parameter"         { }, -- Identifier
@@ -455,6 +455,10 @@ local theme = lush(function(injected_functions)
 		sym("@meta.import.string")({ fg = foreground }),
 		sym("@meta.import.string.punctuation.definition.string")({ fg = foreground }),
 		sym("@meta.import.variable.other.readwrite")({ fg = blue }),
+
+		sym("@punctuation.bracket.js")({ fg = yellow }),
+		sym("@punctuation.bracket.ts")({ fg = yellow }),
+		sym("@punctuation.bracket.tsx")({ fg = yellow }),
 	}
 end)
 
