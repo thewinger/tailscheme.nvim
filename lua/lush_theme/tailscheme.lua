@@ -25,11 +25,11 @@
 --
 --       Basically, name your file,
 --
---       "super_theme/lua/lush_theme/super_theme_dark.lua",
+--       "super_theme/lua/lush_theme/super_theme_gray_950.lua",
 --
 --       not,
 --
---       "super_theme/lua/dark.lua".
+--       "super_theme/lua/gray_950.lua".
 --
 --       With that caveat out of the way...
 --
@@ -45,24 +45,24 @@
 local lush = require("lush")
 local hsl = lush.hsl
 
-local fg = hsl(210, 40, 98)
-local bg = hsl(217, 33, 17)
+local foreground = hsl(210, 40, 98)
+local background = hsl(217, 33, 17)
 local dark = hsl(222, 47, 11)
 local white = hsl(210, 40, 98)
 local comment = hsl(215, 16, 47)
 local gray_light = hsl(213, 27, 84)
 local gray = hsl(215, 20, 65)
-local blue_bg = hsl(202, 80, 24)
+local blue_dark = hsl(202, 80, 24)
 local blue = hsl(199, 95, 74)
--- local green_light = hsl(171, 77, 64)
-local green = hsl(160, 84, 39)
+local green_light = hsl(171, 77, 64)
+local green = hsl(158, 64, 52)
 local cyan = hsl(187, 92, 69)
 -- local red_light = hsl(353, 96, 90)
 local red = hsl(351, 95, 71)
 local orange = hsl(31, 97, 72)
 local yellow = hsl(50, 98, 64)
 local purple = hsl(255, 92, 76)
-local magenta = hsl(329, 86, 70)
+local pink = hsl(329, 86, 70)
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -80,27 +80,27 @@ local theme = lush(function(injected_functions)
 		--
 		-- See :h highlight-groups
 		--
-		ColorColumn({ bg = bg }), -- Columns set with 'colorcolumn'
+		ColorColumn({ bg = background }), -- Columns set with 'colorcolumn'
 		Conceal({ fg = gray }), -- Placeholder characters substituted for concealed text 						see 'conceallevel'
-		Cursor({ fg = white, bg = bg }), -- Character under the cursor
+		Cursor({ fg = white, bg = background }), -- Character under the cursor
 		-- CurSearch      { }, -- Highlighting a search pattern under the cursor 						see 'hlsearch'
 		-- lCursor        { }, -- Character under the cursor when |language-mapping| is used 						see 'guicursor'
 		-- CursorIM       { }, -- Like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorLine({ bg = dark }), -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground 						ctermfg OR guifg is not set.
 		Directory({ fg = blue }), -- Directory names 						and other special names in listings
-		DiffAdd({ fg = bg, bg = green }), -- Diff mode: Added line |diff.txt|
-		DiffChange({ fg = bg, bg = orange }), -- Diff mode: Changed line |diff.txt|
-		DiffDelete({ fg = bg, bg = red }), -- Diff mode: Deleted line |diff.txt|
+		DiffAdd({ fg = background, bg = green }), -- Diff mode: Added line |diff.txt|
+		DiffChange({ fg = background, bg = orange }), -- Diff mode: Changed line |diff.txt|
+		DiffDelete({ fg = background, bg = red }), -- Diff mode: Deleted line |diff.txt|
 		-- DiffText       { }, -- Diff mode: Changed text within a changed line |diff.txt|
 		EndOfBuffer({ fg = dark }), -- Filler lines 						~ after the end of the buffer. By default, this is highlighted like |hl-NonText|.
 		-- TermCursor     { }, -- Cursor in a focused terminal
 		-- TermCursorNC   { }, -- Cursor in an unfocused terminal
-		ErrorMsg({ fg = red, bg = bg, gui = "bold" }), -- Error messages on the command line
+		ErrorMsg({ fg = red, bg = background, gui = "bold" }), -- Error messages on the command line
 		VertSplit({ fg = gray }), -- Column separating vertically split windows
-		Folded({ fg = gray, bg = bg }), -- Line used for closed folds
-		FoldColumn({ fg = dark, bg = bg }), -- 'foldcolumn'
-		SignColumn({ bg = bg }), -- Column where |signs| are displayed
+		Folded({ fg = gray, bg = background }), -- Line used for closed folds
+		FoldColumn({ fg = dark, bg = background }), -- 'foldcolumn'
+		SignColumn({ bg = background }), -- Column where |signs| are displayed
 		IncSearch({ fg = dark, bg = cyan }), -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		Substitute({ fg = dark, bg = blue }), -- |:substitute| replacement text highlighting
 		LineNr({ fg = gray }), -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -109,19 +109,19 @@ local theme = lush(function(injected_functions)
 		CursorLineNr({ fg = gray_light, gui = "bold" }), -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		-- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
 		-- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line
-		MatchParen({ fg = blue, bg = bg, gui = "underline" }), -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen({ fg = blue, bg = background, gui = "underline" }), -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg({}), -- 'showmode' message 						e.g., "-- INSERT -- "
-		MsgArea({ fg = fg, bg = dark }), -- Area for messages and cmdline
+		MsgArea({ fg = foreground, bg = dark }), -- Area for messages and cmdline
 		MsgSeparator({}), -- Separator for scrolled messages, `msgsep` flag of 'display'
 		MoreMsg({ fg = green }), -- |more-prompt|
-		NonText({ fg = bg }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text 						e.g., ">" displayed when a double-wide character doesn't fit at the end of the line. See also |hl-EndOfBuffer|.
-		Normal({ fg = fg, bg = bg }), -- Normal text
+		NonText({ fg = background }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text 						e.g., ">" displayed when a double-wide character doesn't fit at the end of the line. See also |hl-EndOfBuffer|.
+		Normal({ fg = foreground, bg = background }), -- Normal text
 		NormalFloat({ bg = dark }), -- Normal text in floating windows.
-		FloatBorder({ fg = fg, bg = dark }), -- Border of floating windows.
+		FloatBorder({ fg = foreground, bg = dark }), -- Border of floating windows.
 		-- FloatTitle     { }, -- Title of floating windows.
 		NormalNC({}), -- normal text in non-current windows
 		Pmenu({ fg = gray_light, bg = dark, blend = 50 }), -- Popup menu: Normal item.
-		PmenuSel({ fg = bg, bg = blue }), -- Popup menu: Selected item.
+		PmenuSel({ fg = background, bg = blue }), -- Popup menu: Selected item.
 		-- PmenuKind      { }, -- Popup menu: Normal item "kind"
 		-- PmenuKindSel   { }, -- Popup menu: Selected item "kind"
 		-- PmenuExtra     { }, -- Popup menu: Normal item "extra text"
@@ -143,11 +143,11 @@ local theme = lush(function(injected_functions)
 		-- TabLineSel     { }, -- Tab pages line, active tab page label
 		Title({ fg = blue, gui = "bold" }), -- Titles for output from ":set all", ":autocmd" etc.
 		Visual({ fg = dark, bg = blue }), -- Visual mode selection
-		VisualNOS({ bg = bg }), -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg({ fg = red, bg = bg }), -- Warning messages
+		VisualNOS({ bg = background }), -- Visual mode selection when vim is "Not Owning the Selection".
+		WarningMsg({ fg = red, bg = background }), -- Warning messages
 		Whitespace({ fg = gray }), -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		Winseparator({ fg = dark }), -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
-		WildMenu({ fg = bg, bg = blue }), -- Current match in 'wildmenu' completion
+		WildMenu({ fg = background, bg = blue }), -- Current match in 'wildmenu' completion
 		WinBar({ fg = dark }), -- Window bar of current window
 		-- WinBarNC       {  fg = dark }, -- Window bar of not-current windows
 
@@ -169,9 +169,9 @@ local theme = lush(function(injected_functions)
 		Float({ fg = white }), --   A floating point constant: 2.3e10
 
 		Identifier({ fg = blue }), -- (* Any variable name
-		Function({ fg = magenta }), --   Function name (also: methods for classes
+		Function({ fg = pink }), --   Function name (also: methods for classes
 
-		Statement({ fg = magenta }), -- (* Any statement
+		Statement({ fg = pink }), -- (* Any statement
 		Conditional({ fg = blue }), --   if, then, else, endif, switch, etc.
 		-- Repeat         { fg = magenta }, --   for, do, while, etc.
 		-- Label          { }, --   case, default, etc.
@@ -198,9 +198,9 @@ local theme = lush(function(injected_functions)
 		-- Debug          { }, --   Debugging statements
 
 		Underlined({ gui = "underline" }), -- Text that stands out, HTML links
-		Ignore({ fg = cyan, bg = bg, gui = "bold" }), -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template
-		Error({ fg = red, bg = bg, gui = "bold" }), -- Any erroneous construct
-		Todo({ fg = bg, bg = cyan, gui = "bold" }), -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Ignore({ fg = cyan, bg = background, gui = "bold" }), -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template
+		Error({ fg = red, bg = background, gui = "bold" }), -- Any erroneous construct
+		Todo({ fg = background, bg = cyan, gui = "bold" }), -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 		-- These groups are for the native LSP client and diagnostic system. Some
 		-- other LSP clients may use these groups, or use their own. Consult your
@@ -208,7 +208,7 @@ local theme = lush(function(injected_functions)
 
 		-- See :h lsp-highlight, some groups may not be listed, submit a PR fix to lush-template!
 		--
-		LspReferenceText({ bg = blue_bg }), -- Used for highlighting "text" references
+		LspReferenceText({ bg = blue_dark }), -- Used for highlighting "text" references
 		LspReferenceRead({ LspReferenceText }), -- Used for highlighting "read" references
 		LspReferenceWrite({ LspReferenceText }), -- Used for highlighting "write" references
 		LspCodeLens({ Comment }), -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark(|.
@@ -254,10 +254,10 @@ local theme = lush(function(injected_functions)
 		-- [Telescope]
 		TelescopeSelection({ fg = dark, bg = blue }),
 		TelescopeMatching({ fg = white, gui = "bold" }),
-		TelescopeBorder({ fg = blue, bg = bg }),
+		TelescopeBorder({ fg = blue, bg = background }),
 
 		-- [IndentBlankline]
-		IndentBlanklineContextChar({ fg = magenta }),
+		IndentBlanklineContextChar({ fg = pink }),
 		IndentBlanklineContextStart({ gui = "underline" }),
 		IndentBlanklineChar({ fg = gray }),
 		IndentBlanklineSpaceChar({ fg = cyan }),
@@ -291,9 +291,9 @@ local theme = lush(function(injected_functions)
 		NotifyBackground({ bg = dark }),
 
 		-- [Noice]
-		NoiceCmdlinePopupTitle({ fg = magenta }),
+		NoiceCmdlinePopupTitle({ fg = pink }),
 		NoiceCmdlinePopupBorder({ fg = white }),
-		NoiceCmdlineIcon({ fg = magenta }),
+		NoiceCmdlineIcon({ fg = pink }),
 
 		-- Tree-Sitter syntax groups.
 		--
@@ -359,10 +359,102 @@ local theme = lush(function(injected_functions)
 		-- sym"@tag"               { }, -- Tag
 
 		sym("@tag.delimiter.tsx")({ fg = gray }),
-		sym("@tag.builtin.tsx")({ fg = magenta }),
+		sym("@tag.builtin.tsx")({ fg = pink }),
 		sym("@tag.attribute.tsx")({ fg = gray_light }),
 		sym("@operator.tsx")({ fg = gray }),
-		sym("@string.tsx")({ fg = blue }),
+		sym("@string.tsx")({ fg = blue }), -- [HTML]
+		sym("@text.html.entity")({ fg = pink }), -- Tag
+		sym("@text.html.entity.other.attribute-name")({ fg = foreground }),
+		sym("@text.html.string.quoted")({ fg = blue }),
+		sym("@text.html.punctuation.definition.string")({ fg = blue }),
+		sym("@text.html.punctuation")({ fg = gray_light }),
+		sym("@text.html.keyword.operator")({ fg = gray_light }),
+		sym("@text.html.meta.tag")({ fg = gray_light }),
+		sym("@text.html.meta.tag.sgml")({ fg = blue }),
+		sym("@text.html.meta.tag.sgml.punctuation")({ fg = blue }),
+		sym("@text.html.entity.name.function")({ fg = green_light }),
+
+		-- [CSS]
+		sym("@property.css")({ fg = pink }),
+		sym("@source.css.entity")({ fg = pink }),
+		sym("@source.css.entity.other.attribute-name.class")({ fg = pink }),
+		sym("@source.css.entity.other.attribute-name.id")({ fg = pink }),
+		sym("@source.css.entity.other.attribute-name.pseudo-class")({ fg = pink }),
+		sym("@source.css.punctuation.definition.entity")({ fg = pink }),
+		sym("@source.css.meta.attribute-selector")({ fg = purple }),
+		sym("@source.css.meta.attribute-selector.punctuation.definition.string")({ fg = purple }),
+		sym("@source.css.entity.other.attribute-name")({ fg = purple }),
+		sym("@source.css.keyword.control.at-rule")({ fg = gray_light }),
+		sym("@source.css.punctuation.definition.keyword")({ fg = gray_light }),
+		sym("@source.css.meta.property-value")({ fg = foreground }),
+		sym("@source.css.meta.property-value.css.punctuation.definition.constant")({ fg = foreground }),
+		sym("@source.css.meta.property-list.meta.at-rule")({ fg = foreground }),
+		sym("@source.css.variable.parameter")({ fg = foreground }),
+		sym("@source.css.constant")({ fg = foreground }),
+		sym("@source.css.support.constant")({ fg = foreground }),
+		sym("@source.css.meta.property-name")({ fg = blue }),
+		sym("@source.css.support.type.property-name")({ fg = blue }),
+		sym("@source.css.string")({ fg = blue }),
+		sym("@source.css.support.function")({ fg = hsl("#dbeafe") }),
+		sym("@source.css.keyword.control")({ fg = foreground }),
+		sym("@source.css.keyword.operator")({ fg = foreground }),
+		sym("@source.css.keyword.other.unit")({ fg = hsl("#ccfbf1") }),
+		sym("@source.css.variable")({ fg = green }),
+		sym("@source.css.entity.other.attribute-name.placeholder")({ fg = green }),
+		sym("@source.css.entity.other.attribute-name.placeholder.punctuation.definition.entity")({ fg = green }),
+		sym("@source.css.punctuation.section")({ fg = gray_light }),
+		sym("@source.css.punctuation.separator")({ fg = gray_light }),
+		sym("@source.css.punctuation.terminator")({ fg = gray_light }),
+		sym("@source.css.punctuation.definition.constant")({ fg = gray_light }),
+		sym("@source.css.meta.attribute-selector.punctuation.definition")({ fg = gray_light }),
+		sym("@source.css.punctuation.definition.parameters")({ fg = gray_light }),
+		sym("@source.css.punctuation.access")({ fg = gray_light }),
+		sym("@source.css.meta.property-list")({ fg = gray_light }),
+
+		-- [HTML in JS]
+		sym("@source.js.meta.block.entity.name.tag")({ fg = pink }),
+		sym("@source.ts.meta.block.entity.name.tag")({ fg = pink }),
+		sym("@source.tsx.meta.block.entity.name.tag")({ fg = pink }),
+
+		sym("@source.js.meta.block.entity.other.attribute-name")({ fg = gray_light }),
+		sym("@source.ts.meta.block.entity.other.attribute-name")({ fg = gray_light }),
+		sym("@source.tsx.meta.block.entity.other.attribute-name")({ fg = gray_light }),
+
+		sym("@source.js.meta.block.string.quoted")({ fg = blue }),
+		sym("@source.ts.meta.block.string.quoted")({ fg = blue }),
+		sym("@source.tsx.meta.block.string.quoted")({ fg = blue }),
+		sym("@source.js.meta.block.punctuation.definition.string")({ fg = blue }),
+		sym("@source.ts.meta.block.punctuation.definition.string")({ fg = blue }),
+		sym("@source.tsx.meta.block.punctuation.definition.string")({ fg = blue }),
+
+		sym("@source.js.meta.block.meta.jsx.children")({ fg = foreground }),
+		sym("@source.ts.meta.block.meta.jsx.children")({ fg = foreground }),
+		sym("@source.tsx.meta.block.meta.jsx.children")({ fg = foreground }),
+
+		sym("@source.js.meta.block.meta.embedded.expression.variable.other")({ fg = red }),
+		sym("@source.ts.meta.block.meta.embedded.expression.variable.other")({ fg = red }),
+		sym("@source.tsx.meta.block.meta.embedded.expression.variable.other")({ fg = red }),
+		sym("@source.js.meta.block.meta.embedded.expression.variable.other.readwrite")({ fg = red }),
+		sym("@source.ts.meta.block.meta.embedded.expression.variable.other.readwrite")({ fg = red }),
+		sym("@source.tsx.meta.block.meta.embedded.expression.variable.other.readwrite")({ fg = red }),
+
+		sym("@source.js.meta.block.keyword.operator.ternary")({ fg = purple }),
+		sym("@source.ts.meta.block.keyword.operator.ternary")({ fg = purple }),
+		sym("@source.tsx.meta.block.keyword.operator.ternary")({ fg = purple }),
+
+		-- [JSON]
+		sym("@source.json.support")({ fg = foreground }),
+		sym("@source.json.constant")({ fg = red }),
+		sym("@constant.character.escape")({ fg = gray_light }),
+
+		-- [JS]
+		sym("@variable.other.property.js")({ fg = gray_light }),
+		sym("@meta.import.keyword.control.import")({ fg = gray_light }),
+		sym("@meta.import.keyword.control.from")({ fg = gray_light }),
+		sym("@meta.import.punctuation")({ fg = gray_light }),
+		sym("@meta.import.string")({ fg = foreground }),
+		sym("@meta.import.string.punctuation.definition.string")({ fg = foreground }),
+		sym("@meta.import.variable.other.readwrite")({ fg = blue }),
 	}
 end)
 
