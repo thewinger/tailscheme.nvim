@@ -185,7 +185,7 @@ local theme = lush(function(injected_functions)
 		-- Macro          { }, --   Same as Define
 		-- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-		Type({ fg = green_light }), -- (* int, long, char, etc.
+		Type({ fg = pink }), -- (* int, long, char, etc.
 		-- StorageClass   { }, --   static, register, volatile, etc.
 		-- Structure      { }, --   struct, union, enum, etc.
 		-- Typedef        { }, --   A typedef
@@ -457,9 +457,9 @@ local theme = lush(function(injected_functions)
 		sym("@meta.import.string.punctuation.definition.string")({ fg = foreground }),
 		sym("@meta.import.variable.other.readwrite")({ fg = blue }),
 
-		sym("@punctuation.bracket.js")({ fg = yellow }),
-		sym("@punctuation.bracket.ts")({ fg = yellow }),
-		sym("@punctuation.bracket.tsx")({ fg = yellow }),
+		sym("@punctuation.bracket.js")({ fg = gray_light }),
+		sym("@punctuation.bracket.ts")({ fg = gray_light }),
+		sym("@punctuation.bracket.tsx")({ fg = gray_light }),
 	}
 end)
 
