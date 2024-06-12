@@ -169,14 +169,14 @@ local theme = lush(function(injected_functions)
 		Float({ fg = white }), --   A floating point constant: 2.3e10
 
 		Identifier({ fg = blue }), -- (* Any variable name
-		Function({ fg = pink }), --   Function name (also: methods for classes
+		Function({ fg = green_light }), --   Function name (also: methods for classes
 
 		Statement({ fg = pink }), -- (* Any statement
 		Conditional({ fg = blue }), --   if, then, else, endif, switch, etc.
 		-- Repeat         { fg = magenta }, --   for, do, while, etc.
 		-- Label          { }, --   case, default, etc.
 		Operator({ fg = gray }), --   "sizeof", "+", "*", etc.
-		Keyword({ fg = gray }), --   any other keyword
+		Keyword({ fg = gray_light }), --   any other keyword
 		Exception({ fg = purple }), --   try, catch, throw
 
 		PreProc({ fg = purple }), -- (* Generic Preprocessor
@@ -185,7 +185,7 @@ local theme = lush(function(injected_functions)
 		-- Macro          { }, --   Same as Define
 		-- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-		Type({ fg = cyan }), -- (* int, long, char, etc.
+		Type({ fg = green_light }), -- (* int, long, char, etc.
 		-- StorageClass   { }, --   static, register, volatile, etc.
 		-- Structure      { }, --   struct, union, enum, etc.
 		-- Typedef        { }, --   A typedef
