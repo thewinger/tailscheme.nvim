@@ -54,7 +54,7 @@ local gray_light = hsl(213, 27, 84)
 local gray = hsl(215, 20, 65)
 local blue_dark = hsl(202, 80, 24)
 local blue = hsl(199, 95, 74)
-local green_light = hsl(171, 77, 64)
+local green_light = hsl(168, 84, 78)
 local green = hsl(158, 64, 52)
 local cyan = hsl(187, 92, 69)
 -- local red_light = hsl(353, 96, 90)
@@ -101,7 +101,7 @@ local theme = lush(function(injected_functions)
 		Folded({ fg = gray, bg = background }), -- Line used for closed folds
 		FoldColumn({ fg = dark, bg = background }), -- 'foldcolumn'
 		SignColumn({ bg = background }), -- Column where |signs| are displayed
-		IncSearch({ fg = dark, bg = cyan }), -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		IncSearch({ fg = dark, bg = orange }), -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		Substitute({ fg = dark, bg = blue }), -- |:substitute| replacement text highlighting
 		LineNr({ fg = gray }), -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		-- LineNrAbove    { }, -- Line number for when the 'relativenumber' option is set, above the cursor line
