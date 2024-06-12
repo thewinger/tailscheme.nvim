@@ -334,6 +334,7 @@ local theme = lush(function(injected_functions)
 		-- sym"@boolean"           { }, -- Boolean
 		-- sym"@float"             { }, -- Float
 		sym("@function.tsx")({ fg = green_light }), -- Function
+		sym("@lsp.type.function.typescriptreact")({ fg = green_light }),
 		-- sym"@function.builtin"  { }, -- Special
 		-- sym"@function.macro"    { }, -- Macro
 		-- sym"@parameter"         { }, -- Identifier
