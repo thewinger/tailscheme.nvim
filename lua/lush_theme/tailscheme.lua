@@ -169,7 +169,7 @@ local theme = lush(function(injected_functions)
 		Float({ fg = white }), --   A floating point constant: 2.3e10
 
 		Identifier({ fg = blue }), -- (* Any variable name
-		Function({ fg = green_light }), --   Function name (also: methods for classes
+		Function({ fg = pink }), --   Function name (also: methods for classes
 
 		Statement({ fg = pink }), -- (* Any statement
 		Conditional({ fg = blue }), --   if, then, else, endif, switch, etc.
@@ -291,9 +291,12 @@ local theme = lush(function(injected_functions)
 		NotifyBackground({ bg = dark }),
 
 		-- [Noice]
-		NoiceCmdlinePopupTitle({ fg = pink }),
-		NoiceCmdlinePopupBorder({ fg = white }),
-		NoiceCmdlineIcon({ fg = pink }),
+		NoiceCmdLine({ bg = dark }),
+		NoiceCmdlineIconCmdline({ fg = pink }),
+		NoiceCmdlineIconSearch({ fg = orange }),
+		NoiceCmdlinePopupBorderSearch({ fg = cyan }),
+		NoiceCmdlinePopUp({ bg = dark }),
+		NoiceVirtualText({ fg = orange }),
 
 		-- Tree-Sitter syntax groups.
 		--
