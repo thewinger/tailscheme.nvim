@@ -1,3 +1,37 @@
+-- [ SUPABASE ]
+-- foreground: "#ededed",
+-- constant: "#3ecf8e",
+-- string: "#ededed",
+-- comment: "#707070",
+-- keyword: "#a0a0a0",
+-- parameter: "#ededed",
+-- function: "#3ecf8e",
+-- stringExpression: "#3ecf8e",
+-- punctuation: "#ededed",
+-- link: "#ededed",
+-- number: "#ededed",
+-- property: "#3ecf8e",
+-- highlight: "#232323",
+-- highlightHover: "#1D1D1D",
+-- highlightBorder: "#383838"
+
+-- [ Vercel ]
+-- foreground: "#ededed",
+-- constant: "#51a8ff",
+-- string: "#00ca53",
+-- comment: " #a1a1a1",
+-- keyword: "#ff548e",
+-- parameter: "#ff9907",
+-- function: "#c472fb",
+-- stringExpression: "#00ca53",
+-- punctuation: "#ededed",
+-- link: "#00ca53",
+-- number: "#ffffff",
+-- property: "#51a8ff",
+-- highlight: "#002f62",
+-- highlightHover: "#BEC6D3",
+-- highlightBorder: "#51a8ff"
+--
 --
 -- Built with,
 --
@@ -361,6 +395,7 @@ local theme = lush(function(injected_functions)
 		-- sym"@preproc"           { }, -- PreProc
 		-- sym"@debug"             { }, -- Debug
 		sym("@tag.tsx")({ fg = green_light }), -- Tag
+		sym("@tag.javascript")({ fg = green_light }), -- Tag
 
 		sym("@tag.delimiter.tsx")({ fg = gray }),
 		sym("@tag.builtin.tsx")({ fg = pink }),
